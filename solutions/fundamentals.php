@@ -1,7 +1,7 @@
 <?php
 
 //Функция для дебага
-function show($a, $flag){
+function show($a, $flag =){
 	if($flag == 'vd'){
 		echo '<pre>';
 		var_dump($a);
@@ -27,9 +27,29 @@ function show($a, $flag){
 		return str_repeat($str, $n);
 	}
 	//-----------------------------------------
-	function invert($arr){
-		#my code...
-	}
+	function invert(array $a){
+				$b = [];
+				foreach ($a as $v => $k){
+					$b[] = $k*(-1);
+				}
+				return $b;
+			}
+	//and else some another solusions:
+
+	//function invert(array $a): array {
+	//   $res = [];
+	//   foreach ($a as $n) {
+	//     $res[] = - $n;
+	//   }
+	//   return $res;
+	// }
+
+	//function invert(array $a): array {
+	//foreach($a as $key=>&$val)
+	//$val = $val*(-1);
+	//return $a;
+	//}
+
 	//-----------------------------------------------
 
 	function basicOp($op, $v1, $v2){
