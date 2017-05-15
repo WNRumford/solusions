@@ -1,7 +1,7 @@
 <?php
 
 //Функция для дебага
-function show($a, $flag =){
+function show($a, $flag = null){
 	if($flag == 'vd'){
 		echo '<pre>';
 		var_dump($a);
