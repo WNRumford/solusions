@@ -70,3 +70,36 @@ function show($a, $flag = null){
 	function no_space($str){
 		  return str_replace(' ', '', $str);
 	}
+
+	//Камень ножницы бумага
+	// function rpc ($p1, $p2) {
+ //    if ($p1 == $p2)  return 'Draw!';
+    
+ //    $rsp = ["rock","scissors","paper"]; 
+ //    $p1k = array_search($p1,$rsp);
+ //    $p2k = array_search($p2,$rsp);
+      
+ //    if($p2k == (count($rsp)-1) && $p1k == 0) return 'Player 2 won!';
+ //    if($p1k == (count($rsp)-1) && $p2k == 0) return 'Player 1 won!';
+    
+ //    if($p1k < $p2k) return 'Player 1 won!';
+ //    return "Player 2 won!";
+	// }
+
+function rpc ($p1, $p2) {
+	if($p1 == 'scissors'){
+		if($p2 == 'paper') return 'Player 1 won!';
+		if($p2 == 'rock') return 'Player 2 won!';
+		if($p2 == 'scissors') return 'Draw!';  
+	}elseif($p1 == 'rock'){
+		if($p2 == "paper") return 'Player 2 won!';
+		if($p2 == "scissors") return 'Player 1 won!';
+		if($p2 == 'rock') return 'Draw!';   
+	}elseif($p1 == "paper"){
+		if($p2 == "rock") return "Player 1 won!";
+		if($p2 == "scissors") return "Player 2 won!";
+		if($p2 == 'paper') return 'Draw!';
+	}
+}
+
+
