@@ -102,4 +102,33 @@ function rpc ($p1, $p2) {
 	}
 }
 
+//keep Hidrated!
+function litres($t){
+				return floor($t*0.5);
+			}
 
+//Sum Mixed Array
+/*Given an array of integers as strings and numbers, 
+ *return the sum of the array values as if all were numbers.*/
+function sum_mix(array $a){
+	foreach($a as $k){
+		if(is_string($k)){
+			
+		} 
+	}
+}
+
+
+//To square(root) or not to square(root)
+function sqrpow(array $a){
+	$b = [];
+	foreach($a as $k){
+		$sqr = sqrt($k);
+		if(intval($sqr) == $sqr){
+			$b[] = $sqr;
+		}else{
+			$b[] = $k**2;
+		}
+	}
+	return $b;
+}
