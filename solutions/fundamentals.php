@@ -132,3 +132,20 @@ function sqrpow(array $a){
 	}
 	return $b;
 }
+
+//Count of positives / sum of negatives
+function countPositivesSumNegatives(array $a){
+if (empty($a)) return [];
+
+$b = [0, 0];
+
+foreach($a as $v){
+	if($v > 0){
+		$b[0] += 1; 
+	}else{
+		$b[1] = $b[1] + $v;
+	}
+}
+	return $b;
+}
+
