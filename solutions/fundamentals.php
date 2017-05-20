@@ -149,3 +149,29 @@ foreach($a as $v){
 	return $b;
 }
 
+//You need to write a function that reverses the words in a given string. A word can also fit an empty string. If this is not clear enough, here are some examples:
+// reverse("Hello World") === "World Hello"
+//I like it! 
+function reverse(string $s):string{
+	return implode(' ', array_reverse(explode(' ', $s)));
+}
+
+//Fake Binary
+//my solusion (just simple):
+function fake_bin($s): string {
+	$s = str_split($s);
+	$b = [];
+	foreach($s as $v){
+		if($v <= 4){
+			$b[] = 0;
+		}else{
+			$b[] = 1;
+		}
+	}
+	return implode('', $b);
+}
+
+//And one more solusion, I like it(with RegExp):
+function fake_bin01(string $s): string {
+  return preg_replace(['/[1-4]/','/[5-9]/'], [0,1], $s);
+}
