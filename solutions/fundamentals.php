@@ -157,7 +157,7 @@ function reverse(string $s):string{
 }
 
 //Fake Binary
-//my solusion (just simple):
+//my solution (just simple):
 function fake_bin($s): string {
 	$s = str_split($s);
 	$b = [];
@@ -171,7 +171,7 @@ function fake_bin($s): string {
 	return implode('', $b);
 }
 
-//And one more solusion, I like it(with RegExp):
+//And one more solution, I like it(with RegExp):
 function fake_bin01(string $s): string {
   return preg_replace(['/[1-4]/','/[5-9]/'], [0,1], $s);
 }
