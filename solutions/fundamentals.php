@@ -1,8 +1,8 @@
 <?php
 
 //Функция для дебага
-function show($a, $flag = null){
-	if($flag == 'vd'){
+function show($a, $flag = 0){
+	if($flag == 1){
 		echo '<pre>';
 		var_dump($a);
 		echo '</pre><hr>';
@@ -175,3 +175,96 @@ function fake_bin($s): string {
 function fake_bin01(string $s): string {
   return preg_replace(['/[1-4]/','/[5-9]/'], [0,1], $s);
 }
+
+function how_much_i_love_you(int $nb_petals): string {
+  $arr = [
+    '1' => 'I love you',
+    '2' => 'a little',
+    '3' => 'a lot',
+    '4' => 'passionately',
+    '5' => 'madly',
+    '6' => 'not at all'
+  ];
+  
+  while ($nb_petals > 6) {
+    $nb_petals = $nb_petals - 6;
+  }
+  
+  return $arr[$nb_petals];
+}
+
+//Exclamation marks series #1: Remove a exclamation mark from the end of string
+function remove1(string $s): string{
+	if(substr($s, -1) == '!'){
+		$s = substr_replace($s, '', -1);
+		return $s;
+		}
+	return $s;
+	}
+
+//Exclamation marks series #2: Remove all exclamation marks from the end of sentence
+function remove2($s){
+	while(substr($s, -1) == '!'){
+		$s = substr_replace($s, '', -1);
+	}
+	return $s;
+}
+// and more simple solution:
+function remexcl($s){
+	return rtrim($s, '!');
+}
+
+//Exclamation marks series #6: Remove all exclamation marks from the end of sentence
+function remove3($s, $n){
+	$s = explode('!', $s, $n+1);
+	$s = implode('', $s);
+}
+
+function remove03(string $s, int $n): string {
+ return preg_replace('/\!/', '', $s, $n);
+}
+
+//мой калькулятор	
+function calculator($a, $b, $op){
+		$arr = ['+', '-', '*', '/'];
+		if(!is_numeric($a) || !is_numeric($b) || !in_array($op, $arr)){
+			return 'unknown value';
+		}else{
+			return eval("return $a $op $b;");
+		}
+	}
+
+
+function DNA_strand($dna){
+		$dna = str_split($dna);
+		$res = [];
+		foreach($dna as $k){
+			if($k == 'T')$res[] = 'A';
+			if($k == 'A')$res[] = 'T';
+			if($k == 'C')$res[] = 'G';
+			if($k == 'G')$res[] = 'C';
+		}
+		return implode('', $res);
+	}
+
+//--------------------------------------------------
+	//Hit Count
+/*Task
+As a step towards achieving this; you have decided to create a function that will produce a multi-dimensional array out of the hit count value. Each inner dimension of the array represents an individual digit in the hit count, and will include all numbers that come before it, going back to 0.
+
+Rules
+
+The function will take one argument which will be a four character string representing hit count
+The function must return a multi-dimensional array containing four inner arrays
+The final value in each inner array must be the actual value to be displayed
+Values returned in the array must be of the type number
+*/
+function counter_effect($hc){
+		$hc = str_split($hc);
+		$res = [];
+		$i = 0;
+		foreach($hc as $v){
+			$res[] = range(0, $v); 
+		}
+		return $res;
+	}	
