@@ -279,3 +279,18 @@ function getMiddle($s){
 			return $s[$l/2-1]. $s[($l/2)];
 		}
 	}
+
+public function showSequence($n){
+			if($n == 0)return "0=0";
+			if($n < 0)return "$n<0";
+			$a = [0];
+			$i = 0;
+			while($i < $n){
+				$b = $a[count($a)-1];
+				$a[] = $b+1;
+				$i++;
+			}
+			$res = array_sum($a);
+			$s = implode("+", $a);
+			return $s.= " = $res";
+		}
