@@ -268,3 +268,14 @@ function counter_effect($hc){
 		}
 		return $res;
 	}	
+
+
+//GetMiddle
+function getMiddle($s){
+		$l = mb_strlen($s);
+		if($l % 2 != 0){
+			return $s[(($l + 1) / 2)-1];
+		}else{
+			return $s[$l/2-1]. $s[($l/2)];
+		}
+	}
